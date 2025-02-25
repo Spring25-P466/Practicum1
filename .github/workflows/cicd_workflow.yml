@@ -31,7 +31,7 @@ jobs:
           fail-on-error: true
 
       - name: Build and push the image
-        run: |
+        run:
           docker login --username anderblm --password ${{secrets.ACCESS_TOKEN}} ghcr.io
           docker build -t ghcr.io/anderblm/primes-service:latest --file Dockerfile .  
           docker push ghcr.io/anderblm/primes-service:latest
